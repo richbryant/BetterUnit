@@ -153,5 +153,16 @@ namespace BetterUnit
         /// <returns>Alternative value</returns>
         [Pure]
         public T Return<T>(T anything) => anything;
+        
+        public static Unit operator +(Unit a, Unit b) =>
+            Default;
+
+        [Pure]
+        public static implicit operator ValueTuple(Unit _) => 
+            default;
+        
+        [Pure]
+        public static implicit operator Unit(ValueTuple _) => 
+            default;
     }
 }
